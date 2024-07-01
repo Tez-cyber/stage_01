@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "HNG 11 task (stage 1)",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ip": "^2.0.1",
     "nodemon": "^3.1.4"
   }
 }
