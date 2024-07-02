@@ -1,6 +1,5 @@
 import http from 'http'
 import ip from 'ip'
-import { SuperfaceClient } from "@superfaceai/one-sdk";
 import express from 'express'
 
 const app = express()
@@ -29,5 +28,5 @@ app.get('/', (req, res) => {
 // })
 
 app.listen(PORT, () => {
-    console.log(`Server listening on port: ${PORT}`)
+    console.log(`✅ Server listening on port: ${PORT}`)
 }) 
