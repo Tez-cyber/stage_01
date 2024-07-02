@@ -6,26 +6,22 @@ const app = express()
 
 const PORT = 8800
 
-app.get('/', (req, res) => {
-    const ipAddress = req.ip;
+app.get('/api/hello', (req, res) => {
+    // const ipAddress = req.ip;
     const clientIp = ip.address();
+    const visitorName = req.query.visitor_name || "Mark"
+    const city = "New york"
 
 
-    return res.json({ message: `Hello! Your IP address is: ${clientIp}` });
+    const resultBody = {
+        "client_ip": clientIp,
+        "location": `${city}`,
+        "greeting": `Hello, ${visitorName}!, the temperature is 11 degrees Celsius in ${city}`
+    }
+
+    res.status(200).json(resultBody);
 });
 
-// const server = http.createServer((req, res) => {
-//     const clientIp = ip.address();
-
-
-//     const responseObj = {
-//         client_ip: clientIp,
-//     };
-
-//     res.writeHead(200, { 'Content-Type': 'application/json' });
-//     res.end(JSON.stringify(responseObj));
-
-// })
 
 app.listen(PORT, () => {
     console.log(`✅ Server listening on port: ${PORT}`)
