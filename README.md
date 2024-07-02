@@ -1,5 +1,4 @@
 # stage_01
-
 Stage One Task - Backend Track
 
 Task Description
