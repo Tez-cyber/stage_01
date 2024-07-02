@@ -5,10 +5,13 @@ import { SuperfaceClient } from "@superfaceai/one-sdk";
 
 
 const PORT = 8800
+const sdk = new SuperfaceClient();
+
 const server = http.createServer((req, res) => {
     const clientIp = ip.address();
+   
     const responseObj = {
-        client_ip: clientIp
+        client_ip: clientIp,
     };
 
     res.writeHead(200, { 'Content-Type': 'application/json' });
